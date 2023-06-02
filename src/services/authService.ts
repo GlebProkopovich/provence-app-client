@@ -16,12 +16,16 @@ export default class AuthService {
     email: string,
     password: string
   ): Promise<AxiosResponse<AuthResponse>> {
-    return api.post<AuthResponse>('/registration', {
-      name,
-      number,
-      email,
-      password,
-    });
+    return api.post<AuthResponse>(
+      '/registration',
+      {
+        name,
+        number,
+        email,
+        password,
+      },
+      { withCredentials: true }
+    );
   }
 
   static async logout(): Promise<void> {

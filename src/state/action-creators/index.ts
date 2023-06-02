@@ -181,7 +181,6 @@ export const getDefaultCart = (): any => {
       const response = await axios.get(
         `https://elated-teal-cod.cyclic.app/api/alldishes`
       );
-      console.log(response);
       const alldishes: IDishCart[] = response.data.alldishes;
       const allIdDishes: IAllIdDishes = {};
       alldishes.forEach((el) => {
