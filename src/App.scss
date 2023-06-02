@@ -1,0 +1,24 @@
+.header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+}
+
+.header-relative {
+  height: 80px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+
+main {
+  flex-grow: 1;
+  background: rgb(243, 243, 243);
+}
+
+@media screen and (max-width: 950px) {
+  .header-relative {
+    height: 60px;
+  }
+}

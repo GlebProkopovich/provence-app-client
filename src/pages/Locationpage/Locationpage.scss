@@ -1,0 +1,81 @@
+.map-container {
+  height: 550px;
+  background-image: url(../../images/main-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .map-subcontainer {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+
+    h2 {
+      height: 100px;
+      line-height: 100px;
+      font-size: 25px;
+      font-weight: 400;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .leaflet-container {
+      width: 600px;
+      height: 350px;
+      z-index: 0;
+      border-radius: 10px;
+    }
+
+    h4 {
+      height: 70px;
+      line-height: 70px;
+      font-size: 15px;
+      font-weight: 400;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .map-container {
+    .map-subcontainer {
+      h2 {
+        font-size: 20px;
+      }
+
+      .leaflet-container {
+        width: 400px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .map-container {
+    .map-subcontainer {
+      h2 {
+        height: 60px;
+        line-height: 20px;
+        font-size: 18px;
+        margin: 30px 0 0 0;
+      }
+
+      .leaflet-container {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .map-container {
+    .map-subcontainer {
+      .leaflet-container {
+        width: 220px;
+      }
+    }
+  }
+}

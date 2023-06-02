@@ -1,0 +1,179 @@
+.aboutpage-container {
+  max-width: 1050px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  .img {
+    height: 400px;
+    width: 400px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .text-content {
+    max-width: 550px;
+
+    h1 {
+      height: 90px;
+      line-height: 90px;
+      color: #323232;
+      font-size: 40px;
+      font-weight: 400;
+    }
+
+    p {
+      line-height: 25px;
+      color: #323232;
+      font-weight: 300;
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .aboutpage-container {
+    max-width: 900px;
+    .img {
+      height: 350px;
+      width: 350px;
+    }
+
+    .text-content {
+      max-width: 450px;
+
+      h1 {
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .aboutpage-container {
+    max-width: 800px;
+    .img {
+      height: 300px;
+      width: 300px;
+    }
+
+    .text-content {
+      max-width: 400px;
+
+      h1 {
+        height: 70px;
+        line-height: 70px;
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .aboutpage-container {
+    flex-direction: column;
+    align-items: center;
+
+    .img {
+      height: 400px;
+      width: 400px;
+    }
+
+    .text-content {
+      max-width: 550px;
+
+      h1 {
+        height: 90px;
+        line-height: 90px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboutpage-container {
+    .img {
+      height: 350px;
+      width: 350px;
+    }
+
+    .text-content {
+      max-width: 400px;
+
+      h1 {
+        height: 90px;
+        line-height: 90px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .aboutpage-container {
+    margin-top: 30px;
+    .img {
+      height: 250px;
+      width: 250px;
+    }
+
+    .text-content {
+      max-width: 300px;
+
+      h1 {
+        font-size: 25px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .aboutpage-container {
+    margin-top: 30px;
+    .img {
+      height: 220px;
+      width: 220px;
+    }
+
+    .text-content {
+      max-width: 220px;
+
+      h1 {
+        height: 60px;
+        line-height: 60px;
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

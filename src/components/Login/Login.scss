@@ -1,0 +1,230 @@
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+
+  .login-subcontainer {
+    min-height: 340px;
+    width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+
+      .inputs {
+        height: 80px;
+        width: 330px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        margin: 5px 0 0 0;
+
+        label {
+          position: absolute;
+          top: 28px;
+          left: 0;
+          font-size: 18px;
+          color: #323232;
+          transition: all 0.3s ease;
+          cursor: text;
+
+          &:active {
+            color: #323232;
+          }
+        }
+
+        .label-focused {
+          top: 2px;
+          font-size: 14px;
+          color: #323232;
+        }
+
+        input {
+          height: 40px;
+          font-size: 18px;
+          color: #323232;
+          border: none;
+          border-bottom: solid 0.5px #323232;
+        }
+
+        .error {
+          font-size: 12px;
+          font-weight: 400;
+          color: rgba(189, 0, 0, 0.949);
+          position: absolute;
+          top: 65px;
+          left: 0;
+        }
+      }
+
+      .signIn-btn {
+        height: 50px;
+        width: 100%;
+        border: none;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 10px;
+        background: rgba(189, 0, 0, 0.949);
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background: rgba(141, 0, 0, 0.949);
+        }
+
+        &:active {
+          background: rgba(189, 0, 0, 0.949);
+        }
+      }
+
+      .signUp-container {
+        height: 60px;
+        width: 230px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        color: #323232;
+
+        button {
+          font-size: 16px;
+          border: none;
+          background: none;
+          color: #323232;
+          transition: all 0.3s ease;
+          cursor: pointer;
+
+          &:hover {
+            color: rgba(141, 0, 0, 0.949);
+          }
+
+          &:active {
+            color: #323232;
+          }
+        }
+      }
+    }
+
+    .loginError {
+      margin: 5px 0 0 0;
+      font-weight: 600;
+      color: rgba(189, 0, 0, 0.949);
+      align-self: start;
+    }
+
+    .close-btn {
+      position: absolute;
+      color: #fff;
+      top: 15px;
+      left: 402px;
+      font-size: 40px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(120%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login-container {
+    height: 100vh;
+    width: 100vw;
+
+    .login-subcontainer {
+      width: 260px;
+
+      form {
+        .inputs {
+          width: 210px;
+
+          label {
+            font-size: 16px;
+          }
+
+          input {
+            font-size: 16px;
+          }
+        }
+
+        .signIn-btn {
+          font-size: 16px;
+        }
+
+        .signUp-container {
+          width: 200px;
+          font-size: 14px;
+
+          button {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .loginError {
+        width: 210px;
+        font-size: 14px;
+      }
+
+      .close-btn {
+        font-size: 30px;
+        left: 262px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .login-container {
+    .login-subcontainer {
+      width: 210px;
+
+      form {
+        .inputs {
+          width: 160px;
+        }
+
+        .signUp-container {
+          width: 160px;
+          font-size: 11px;
+
+          button {
+            font-size: 11px;
+          }
+        }
+      }
+
+      .loginError {
+        width: 160px;
+        font-size: 14px;
+        margin-top: 12px;
+      }
+
+      .close-btn {
+        font-size: 30px;
+        left: 212px;
+      }
+    }
+  }
+}
