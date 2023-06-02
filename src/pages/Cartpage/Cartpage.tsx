@@ -73,7 +73,7 @@ const Cartpage: FC = () => {
 
   let orderedDishes: IOrderedDishInfo[] = [];
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://elated-teal-cod.cyclic.app/api';
 
   const overrideOrder: CSSProperties = {
     margin: '0 auto',

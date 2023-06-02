@@ -2,7 +2,7 @@ import axios from 'axios';
 import AuthService from '../../services/authService';
 import { AuthResponse, IAllIdDishes, IDishCart } from '../../types';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://elated-teal-cod.cyclic.app/api';
 
 export const setLoginOpened = () => ({
   type: 'IS_LOGIN_OPENED',
@@ -143,7 +143,7 @@ export const getDishes = (
   return async (dispatch: any) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/${dishUrl}?page=${page}&search=${searchValue}`
+        `https://elated-teal-cod.cyclic.app/api/${dishUrl}?page=${page}&search=${searchValue}`
       );
       const dishes = response.data[dishUrl];
       const responseAllInfo = {
@@ -178,7 +178,9 @@ export const clearSearchInput = () => ({
 export const getDefaultCart = (): any => {
   return async (dispatch: any) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/alldishes`);
+      const response = await axios.get(
+        `https://elated-teal-cod.cyclic.app/api/alldishes`
+      );
       console.log(response);
       const alldishes: IDishCart[] = response.data.alldishes;
       const allIdDishes: IAllIdDishes = {};
@@ -202,8 +204,9 @@ export const getAllDishes = (): any => {
   return async (dispatch: any) => {
     try {
       dispatch(setAllDishesLoadingChanged(true));
-      const response = (await axios.get(`http://localhost:5000/api/alldishes`))
-        .data.alldishes;
+      const response = (
+        await axios.get(`https://elated-teal-cod.cyclic.app/api/alldishes`)
+      ).data.alldishes;
       dispatch(setAllDishesLoadingChanged(false));
       dispatch({
         type: 'GET_ALL_DISHES',

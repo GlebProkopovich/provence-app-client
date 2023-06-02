@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AuthResponse } from '../types';
 
-export const API_URL = 'http://localhost:5000/api';
+export const API_URL = 'https://elated-teal-cod.cyclic.app/api';
 
 const api = axios.create({
   withCredentials: true,
