@@ -73,7 +73,7 @@ const Cartpage: FC = () => {
 
   let orderedDishes: IOrderedDishInfo[] = [];
 
-  const API_URL = 'https://elated-teal-cod.cyclic.app/api';
+  const API_URL = 'https://elated-teal-cod.cyclic.app';
 
   const overrideOrder: CSSProperties = {
     margin: '0 auto',
@@ -100,7 +100,7 @@ const Cartpage: FC = () => {
     const makeTheOrder = async () => {
       try {
         setIsLoading(true);
-        await axios.post(`${API_URL}/order`, {
+        await axios.post(`${API_URL}/api/order`, {
           name: nameValue,
           phone: phoneValue,
           city: cityValue,

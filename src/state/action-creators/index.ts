@@ -2,7 +2,7 @@ import axios from 'axios';
 import AuthService from '../../services/authService';
 import { AuthResponse, IAllIdDishes, IDishCart } from '../../types';
 
-const API_URL = 'https://elated-teal-cod.cyclic.app/api';
+const API_URL = 'https://elated-teal-cod.cyclic.app';
 
 export const setLoginOpened = () => ({
   type: 'IS_LOGIN_OPENED',
@@ -69,7 +69,7 @@ export const refresh = (): any => {
   return async (dispatch: any) => {
     try {
       dispatch(setLoadingOpened(true));
-      const response = await axios.get<AuthResponse>(`${API_URL}/refresh`, {
+      const response = await axios.get<AuthResponse>(`${API_URL}/api/refresh`, {
         withCredentials: true,
       });
       dispatch(setLoadingOpened(false));
@@ -143,7 +143,7 @@ export const getDishes = (
   return async (dispatch: any) => {
     try {
       const response = await axios.get(
-        `https://elated-teal-cod.cyclic.app/api/${dishUrl}?page=${page}&search=${searchValue}`
+        `${API_URL}/api/${dishUrl}?page=${page}&search=${searchValue}`
       );
       const dishes = response.data[dishUrl];
       const responseAllInfo = {
@@ -178,9 +178,7 @@ export const clearSearchInput = () => ({
 export const getDefaultCart = (): any => {
   return async (dispatch: any) => {
     try {
-      const response = await axios.get(
-        `https://elated-teal-cod.cyclic.app/api/alldishes`
-      );
+      const response = await axios.get(`${API_URL}/api/alldishes`);
       const alldishes: IDishCart[] = response.data.alldishes;
       const allIdDishes: IAllIdDishes = {};
       alldishes.forEach((el) => {
@@ -203,9 +201,8 @@ export const getAllDishes = (): any => {
   return async (dispatch: any) => {
     try {
       dispatch(setAllDishesLoadingChanged(true));
-      const response = (
-        await axios.get(`https://elated-teal-cod.cyclic.app/api/alldishes`)
-      ).data.alldishes;
+      const response = (await axios.get(`${API_URL}/api/alldishes`)).data
+        .alldishes;
       dispatch(setAllDishesLoadingChanged(false));
       dispatch({
         type: 'GET_ALL_DISHES',

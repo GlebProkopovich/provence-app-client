@@ -44,7 +44,7 @@ function App() {
   }, [location]);
 
   useEffect(() => {
-    const isAppStarted = localStorage.getItem('persist:root');
+    const isAppStarted = localStorage.getItem('persist:cart');
     !isAppStarted && dispatch(getDefaultCart());
 
     if (localStorage.getItem('token')) {
