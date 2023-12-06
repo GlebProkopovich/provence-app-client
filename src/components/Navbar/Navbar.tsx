@@ -1,10 +1,10 @@
-import { CSSProperties, FC, useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { IAuthedUser, ILoadingOpened, ILogin, ILoginUser } from '../../types';
-import { actionCreators } from '../../state';
-import { BeatLoader } from 'react-spinners';
-import './Navbar.scss';
+import { CSSProperties, FC, useEffect, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { IAuthedUser, ILoadingOpened, ILogin, ILoginUser } from "../../types";
+import { actionCreators } from "../../state";
+import { BeatLoader } from "react-spinners";
+import "./Navbar.scss";
 
 const Navbar: FC = () => {
   const [isOpenDropdownLocations, setIsOpenDropdownLocations] =
@@ -43,7 +43,7 @@ const Navbar: FC = () => {
   const dispatch = useDispatch();
 
   const override: CSSProperties = {
-    padding: '0',
+    padding: "0",
   };
 
   const { setLoginOpened, logoutUser, setLoadingOpened } = actionCreators;
@@ -88,22 +88,22 @@ const Navbar: FC = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutsideLocations);
+    document.addEventListener("mousedown", handleClickOutsideLocations);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutsideLocations);
+      document.removeEventListener("mousedown", handleClickOutsideLocations);
     };
   }, [dropdownMenuLocationsRef]);
 
   useEffect(() => {
-    const body = document.getElementsByTagName('body')[0];
+    const body = document.getElementsByTagName("body")[0];
     if (isLoginOpened) {
-      body.classList.add('no-scroll');
+      body.classList.add("no-scroll");
     } else {
-      body.classList.remove('no-scroll');
+      body.classList.remove("no-scroll");
     }
 
     return () => {
-      body.classList.remove('no-scroll');
+      body.classList.remove("no-scroll");
     };
   }, [isLoginOpened]);
 
@@ -117,9 +117,9 @@ const Navbar: FC = () => {
         setIsOpenDropdownLanguages(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutsideLanguages);
+    document.addEventListener("mousedown", handleClickOutsideLanguages);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutsideLanguages);
+      document.removeEventListener("mousedown", handleClickOutsideLanguages);
     };
   }, [dropdownMenuLanguagesRef]);
 
@@ -133,14 +133,14 @@ const Navbar: FC = () => {
         setIsOpenDropdownMenu(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutsideMenu);
+    document.addEventListener("mousedown", handleClickOutsideMenu);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutsideMenu);
+      document.removeEventListener("mousedown", handleClickOutsideMenu);
     };
   }, [dropdownMenuLanguagesRef]);
 
   useEffect(() => {
-    if (location.pathname.startsWith('/locations')) {
+    if (location.pathname.startsWith("/locations")) {
       setIsOpenPageLocations(true);
     } else {
       setIsOpenPageLocations(false);
@@ -148,7 +148,7 @@ const Navbar: FC = () => {
   }, [location]);
 
   useEffect(() => {
-    if (location.pathname.startsWith('/menu')) {
+    if (location.pathname.startsWith("/menu")) {
       setIsOpenPageMenu(true);
     } else {
       setIsOpenPageMenu(false);
@@ -164,10 +164,10 @@ const Navbar: FC = () => {
 
     handleResize();
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -176,7 +176,7 @@ const Navbar: FC = () => {
       {isSmallScreen ? (
         <div className="navbarSmall-container">
           <button
-            className={isDropdownMenuOpened ? 'close-btn' : 'dropdown-btn'}
+            className={isDropdownMenuOpened ? "close-btn" : "dropdown-btn"}
             onClick={handleClickOnDropdownMenu}
           >
             <div className="line"></div>
@@ -194,7 +194,7 @@ const Navbar: FC = () => {
           {isLoadingOpened ? (
             <button className="loginBtn">
               <BeatLoader
-                color={'#fff'}
+                color={"#fff"}
                 loading={isLoadingOpened}
                 cssOverride={override}
                 size={10}
@@ -216,12 +216,12 @@ const Navbar: FC = () => {
           )}
           <div
             className={`dropdownMenu-container ${
-              isDropdownMenuOpened ? 'opened' : 'closed'
+              isDropdownMenuOpened ? "opened" : "closed"
             }`}
           >
             <button
               className={`dropdownMenu-btn ${
-                isOpenDropdownLocations && 'activeBtn'
+                isOpenDropdownLocations && "activeBtn"
               }`}
               onClick={() => {
                 handleClickLocationsDropdown();
@@ -231,7 +231,7 @@ const Navbar: FC = () => {
               <p>locations</p>
               <span
                 className={`material-symbols-outlined ${
-                  isOpenDropdownLocations && 'more'
+                  isOpenDropdownLocations && "more"
                 }`}
               >
                 expand_more
@@ -266,12 +266,13 @@ const Navbar: FC = () => {
               to="/about"
               className="dropdownMenu-navlink"
               onClick={handleClickOnDropdownMenu}
+              id="btnClick"
             >
               about us
             </NavLink>
             <button
               className={`dropdownMenu-btn ${
-                isOpenDropdownLanguages && 'activeBtn'
+                isOpenDropdownLanguages && "activeBtn"
               }`}
               onClick={() => {
                 handleClickLanguagesDropdown();
@@ -281,7 +282,7 @@ const Navbar: FC = () => {
               <p>language</p>
               <span
                 className={`material-symbols-outlined ${
-                  isOpenDropdownLanguages && 'more'
+                  isOpenDropdownLanguages && "more"
                 }`}
               >
                 expand_more
@@ -296,7 +297,7 @@ const Navbar: FC = () => {
             <div className="action-content">
               <h2>action</h2>
               <p>
-                Make an order on more than 50 larries and get{' '}
+                Make an order on more than 50 larries and get{" "}
                 <span>free delivery</span>
               </p>
             </div>
@@ -313,14 +314,14 @@ const Navbar: FC = () => {
               <button
                 ref={dropdownButtonLocationsRef}
                 className={`dropdownNavbarBtns ${
-                  (isOpenDropdownLocations || isOpenPageLocations) && 'active'
+                  (isOpenDropdownLocations || isOpenPageLocations) && "active"
                 }`}
                 onClick={() => handleClickLocationsDropdown()}
               >
                 <p>locations</p>
                 <span
                   className={`material-symbols-outlined ${
-                    isOpenDropdownLocations && 'more'
+                    isOpenDropdownLocations && "more"
                   }`}
                 >
                   expand_more
@@ -343,7 +344,7 @@ const Navbar: FC = () => {
               </button>
               <NavLink
                 to="/menu/breakfasts"
-                className={`nav-link ${isOpenPageMenu && 'active'}`}
+                className={`nav-link ${isOpenPageMenu && "active"}`}
               >
                 menu
               </NavLink>
@@ -352,7 +353,7 @@ const Navbar: FC = () => {
               </NavLink>
               <button
                 className={`dropdownNavbarBtns ${
-                  isOpenDropdownLanguages && 'active'
+                  isOpenDropdownLanguages && "active"
                 }`}
                 onClick={() => handleClickLanguagesDropdown()}
                 ref={dropdownButtonLanguagesRef}
@@ -360,7 +361,7 @@ const Navbar: FC = () => {
                 <p>language</p>
                 <span
                   className={`material-symbols-outlined ${
-                    isOpenDropdownLanguages && 'more'
+                    isOpenDropdownLanguages && "more"
                   }`}
                 >
                   expand_more
@@ -384,7 +385,7 @@ const Navbar: FC = () => {
               {isLoadingOpened ? (
                 <button className="loginBtn">
                   <BeatLoader
-                    color={'#fff'}
+                    color={"#fff"}
                     loading={isLoadingOpened}
                     cssOverride={override}
                     size={10}
