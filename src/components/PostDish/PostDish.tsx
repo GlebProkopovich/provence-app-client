@@ -1,8 +1,8 @@
-import { FC, useState } from 'react';
-import { IAllDishesId, IPostDish } from '../../types';
-import { useDispatch, useSelector } from 'react-redux';
-import { actionCreators } from '../../state';
-import './PostDish.scss';
+import { FC, useState } from "react";
+import { IAllDishesId, IPostDish } from "../../types";
+import { useDispatch, useSelector } from "react-redux";
+import { actionCreators } from "../../state";
+import "./PostDish.scss";
 
 const PostDish: FC<IPostDish> = ({ id, imgSrc, altImg, title, price }) => {
   const [isClickedOnThePrice, setIsClickedOnThePrice] =
@@ -30,7 +30,14 @@ const PostDish: FC<IPostDish> = ({ id, imgSrc, altImg, title, price }) => {
       {isClickedOnThePrice ? (
         <button
           className="addToCart-btn"
-          onClick={() => dispatch(addToCart(id))}
+          onClick={() => {
+            dispatch(addToCart(id));
+            gtag("event", "add_to_cart", {
+              currency: "usdt",
+              value: price,
+              items: "some dishes",
+            });
+          }}
         >
           <p>Add to cart</p>
           <p>{price}</p>
