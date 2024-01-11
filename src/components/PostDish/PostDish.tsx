@@ -32,11 +32,6 @@ const PostDish: FC<IPostDish> = ({ id, imgSrc, altImg, title, price }) => {
           className="addToCart-btn"
           onClick={() => {
             dispatch(addToCart(id));
-            gtag("event", "add_to_cart", {
-              currency: "usdt",
-              value: price,
-              items: "some dishes",
-            });
           }}
         >
           <p>Add to cart</p>
