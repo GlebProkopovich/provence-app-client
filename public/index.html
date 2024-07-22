@@ -22,30 +22,20 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
     />
+    <!-- Alai counter -->
     <script type="text/javascript">
-      (function (al, ai, me, tri, cs) {
-        al.alai =
-          al.alai ||
-          function () {
-            (al.alai.m = al.alai.m || []).push(arguments);
-          };
-        for (var i = 0; i < document.scripts.length; i++) {
-          if (document.scripts[i].src === me) {
-            return;
-          }
-        }
-        al.alaiSet = { alaiid: 1111111 };
-        tri = ai.createElement("script");
-        cs = ai.getElementsByTagName("script")[0];
-        tri.async = 1;
-        tri.src = me + al.alaiSet.alaiid;
-        cs.parentNode.insertBefore(tri, cs);
-      })(
-        window,
-        document,
-        "https://collect-data.test.alai-metrics.com/alai_visit/watch.js?alai="
-      );
+        (function(al, ai, me, tri, cs){al.alai=al.alai||function(){(al.alai.m=al.alai.m||[]).push(arguments)};
+            for (let i = 0; i < document.scripts.length; i++) {if (document.scripts[i].src === me) { return; }}
+            al.alaiSet = { alaiid: 10000000 };
+            tri=ai.createElement('script');
+            cs=ai.getElementsByTagName('script')[0];
+            tri.async=1;
+            tri.src=me + al.alaiSet.alaiid;
+            cs.parentNode.insertBefore(tri,cs)
+        })
+        (window, document, `https://collect-data.test.alai-metrics.com/alai_visit/watch.js?alai=`);
     </script>
+    <!-- /Alai counter -->
     <title>Provence</title>
   </head>
   <body>
