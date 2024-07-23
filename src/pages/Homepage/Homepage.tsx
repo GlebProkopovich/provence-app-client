@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import waffleSandwich from '../../images/waffle-sandwich.png';
-import { NavLink } from 'react-router-dom';
-import './Homepage.scss';
+import { FC } from "react";
+import waffleSandwich from "../../images/waffle-sandwich.png";
+import { NavLink } from "react-router-dom";
+import "./Homepage.scss";
 
 const Homepage: FC = () => {
   return (
@@ -11,6 +11,9 @@ const Homepage: FC = () => {
         <h3>discount 20%</h3>
         <h5>just order by our delivery service</h5>
         <NavLink to="menu/breakfasts">order now</NavLink>
+        <a href={waffleSandwich} download className="download-link">
+          Download PNG
+        </a>
         <div className="main-image">
           <img src={waffleSandwich} alt="waffle-sandwich" />
         </div>
