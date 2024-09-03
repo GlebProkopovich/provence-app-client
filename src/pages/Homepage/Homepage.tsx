@@ -14,6 +14,9 @@ const Homepage: FC = () => {
         <a href={waffleSandwich} download className="download-link">
           Download PNG
         </a>
+        <button onclick="alai(10000000, 'reach_event', 'test')" className="download-link">
+          JS Event
+        </button>
         <div className="main-image">
           <img src={waffleSandwich} alt="waffle-sandwich" />
         </div>
