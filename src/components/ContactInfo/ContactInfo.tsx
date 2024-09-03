@@ -1,9 +1,9 @@
-import { FC } from 'react';
-import instagramIcon from '../../images/icons/instagramIcon.png';
-import twitterIcon from '../../images/icons/twitterIcon.png';
-import whatsappIcon from '../../images/icons/whatsappIcon.png';
-import facebookIcon from '../../images/icons/facebookIcon.png';
-import './ContactInfo.scss';
+import { FC } from "react";
+import instagramIcon from "../../images/icons/instagramIcon.png";
+import twitterIcon from "../../images/icons/twitterIcon.png";
+import whatsappIcon from "../../images/icons/whatsappIcon.png";
+import facebookIcon from "../../images/icons/facebookIcon.png";
+import "./ContactInfo.scss";
 
 const ContactInfo: FC = () => {
   return (
@@ -12,18 +12,17 @@ const ContactInfo: FC = () => {
       <div className="separator"></div>
       <a
         className="gmail"
-        href="https://www.provencesaburtalo@gmail.com"
+        href="mailto:provencesaburtalo@gmail.com"
         target="_blank"
         rel="noreferrer"
       >
         provencesaburtalo@gmail.com
       </a>
+      <a className="gmail" href="tel:+375291111111" target="_blank" rel="noreferrer">
+        +375291111111
+      </a>
       <div className="social-medias">
-        <a
-          href="https://www.instagram.com/provence.georgia/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://www.instagram.com/provence.georgia/" target="_blank" rel="noreferrer">
           <img src={instagramIcon} alt="instagramIcon" />
         </a>
         <a
@@ -33,18 +32,10 @@ const ContactInfo: FC = () => {
         >
           <img src={facebookIcon} alt="facebookIcon" />
         </a>
-        <a
-          href="https://api.whatsapp.com/send?phone=995568863212"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://api.whatsapp.com/send?phone=995568863212" target="_blank" rel="noreferrer">
           <img src={whatsappIcon} alt="whatsappIcon" />
         </a>
-        <a
-          href="https://api.whatsapp.com/send?phone=995568863212"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://api.whatsapp.com/send?phone=995568863212" target="_blank" rel="noreferrer">
           <img src={twitterIcon} alt="twitterIcon" />
         </a>
       </div>
