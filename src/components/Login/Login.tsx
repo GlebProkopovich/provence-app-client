@@ -114,6 +114,7 @@ const Login: FC = () => {
               Email
             </label>
             <input
+              data-nosnippet
               id="email"
               type="email"
               name="email"
