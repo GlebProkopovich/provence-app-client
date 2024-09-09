@@ -194,6 +194,7 @@ const Registration: FC = () => {
                   Name
                 </label>
                 <input
+                  data-nosnippet
                   id="name"
                   type="text"
                   name="name"
@@ -219,6 +220,7 @@ const Registration: FC = () => {
                   Phone number
                 </label>
                 <input
+                  data-nosnippet
                   id="number"
                   type="tel"
                   name="number"
@@ -244,6 +246,7 @@ const Registration: FC = () => {
                   Email
                 </label>
                 <input
+                  data-nosnippet
                   id="email"
                   type="email"
                   name="email"
@@ -301,7 +304,7 @@ const Registration: FC = () => {
                   'Sign Up'
                 )}
               </button>
-              <div className="signIn-container">
+              <div data-nosnippet className="signIn-container">
                 <p>Already have an account?</p>
                 <button onClick={handleClickOnSignIn}>Sign In</button>
               </div>
