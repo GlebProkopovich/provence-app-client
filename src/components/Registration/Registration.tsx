@@ -198,6 +198,7 @@ const Registration: FC = () => {
                   id="name"
                   type="text"
                   name="name"
+                  class="ym-disable-keys"
                   value={nameValue}
                   onChange={handleNameValue}
                   onFocus={() => setIsNameFocused(true)}
