@@ -4,9 +4,20 @@
 
 <script>
   const now = new Date();
-  const formatted = now.toLocaleString();
+
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+
+  const formatted = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
+  
   console.log('script directly from HTML :', formatted);
 </script>
+
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
